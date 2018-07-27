@@ -83,7 +83,12 @@
         center: true,
         keyboard: true,
 
+        menu: {
+          titleSelector: 'h1'
+        },
+
 				dependencies: [
+          { src: 'vendor/revealjs-menu/menu.js' },
 					{ src: 'vendor/revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); }},
 					{ src: 'vendor/revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); }},
 					{ src: 'vendor/revealjs/plugin/notes/notes.js', async: true },
