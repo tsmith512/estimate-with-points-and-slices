@@ -1,0 +1,128 @@
+@import '../vendor/revealjs/css/theme/template/mixins.scss';
+@import '../vendor/revealjs/css/theme/template/settings.scss';
+
+$blue: #006DAF;
+$orange: #FF9900;
+$grey-lt: #E9E9E9;
+$grey-md: #BCBCBC;
+$grey-dk: #424242;
+$white: #F6F6F6;
+
+$red-dk: #990100;
+
+$whitney: 'Whitney SSm A', 'Whitney SSm B', Helvetica, Arial, sans-serif;
+$tungsten: 'Tungsten Narrow A', 'Tungsten Narrow B', sans-serif;
+
+// Base settings for all themes that can optionally be
+// overridden by the super-theme
+
+// Background of the presentation
+$backgroundColor: $grey-lt;
+
+// Primary/body text
+$mainFont: $whitney;
+$mainFontSize: 32px;
+$mainColor: $grey-dk;
+
+// Headings
+$headingMargin: 0 0 16px 0;
+$headingFont: $tungsten;
+$headingColor: $blue;
+$headingLineHeight: 0.9em;
+$headingLetterSpacing: 0.02em;
+$headingTextTransform: uppercase;
+$headingTextShadow: 1px 1px 0px rgba(255,255,255,0.75);
+$heading1TextShadow: 1px 1px 0px rgba(0,0,0,0.75);
+
+// Links and actions
+$linkColor: $blue;
+$linkColorHover: lighten( $linkColor, 20% );
+
+// Text selection
+$selectionBackgroundColor: $orange;
+$selectionColor: #fff;
+
+// Generates the presentation background, can be overridden
+// to return a background image or gradient
+@mixin bodyBackground() {
+  background: $backgroundColor;
+}
+
+@import '../vendor/revealjs/css/theme/template/theme.scss';
+
+.reveal {
+  h1 {
+    font-weight: 600;
+
+    a {
+      color: lighten($blue, 10%) !important;
+      &:hover { text-decoration: underline !important; }
+    }
+  }
+
+  h2 {
+    text-transform: none;
+    color: mix($grey-md, $grey-dk);
+  }
+
+  p {
+    margin: 1em 0;
+  }
+
+  p.large {
+    border-bottom: 1px solid #bbb;
+    border-top: 1px solid #fff;
+    padding: 0.5em 0;
+    font-size: 36px;
+    font-weight: 700;
+
+    position: relative;
+
+    &:before, &:after {
+      position: absolute;
+      left: 0;
+      right: 0;
+      content: " ";
+      font-size: 0;
+    }
+    &:before {
+      top: -2px;
+      border-top: 1px solid #bbb;
+    }
+    &:after {
+      bottom: -2px;
+      border-bottom: 1px solid #fff;
+    }
+  }
+
+  p.small {
+    border-style: dotted;
+    border-color: #bbb;
+    border-width: 1px 0;
+    padding: 1em 0;
+    font-size: 24px;
+    font-style: italic;
+  }
+
+  p.citation {
+    margin-top: 0;
+    font-size: 18px;
+    font-style: italic;
+  }
+}
+
+// Special slides:
+.blackmail body {
+  background: {
+    image: url('../gfx/blackmail.jpg');
+    size: contain;
+    position: left center;
+    color: white;
+    repeat: no-repeat;
+  }
+
+  section.present {
+    right: 0;
+    text-align: right;
+  }
+}
