@@ -7,6 +7,8 @@
 		<title>Estimating for Iteration: Story Points and Thin Vertical Slices | Taylor Smith</title>
 
     <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6795652/627226/css/fonts.css" />
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+
 
 		<link rel="stylesheet" href="vendor/revealjs/css/reveal.css">
 		<link rel="stylesheet" href="css/slides.css">
@@ -52,11 +54,121 @@
         </section>
 
         <!-- BASICS -->
-        <section>Slide 2</section>
+        <section>
+          <section id="scrum">
+            <h1>4K uses Scrum</h1>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Scrum_process.svg" alt="">
+            <a href="https://ca.wikipedia.org/wiki/Fitxer:Scrum_process.svg" class="citation">Source</a>
+
+            <aside class="notes">
+              Scrum is a process that follows agile development principles. We
+              iterate quickly and deliver completed, usable functionality
+              on a regular basis.
+            </aside>
+          </section>
+
+          <section id="new-project">
+            <h1>So a new project comes in&hellip;</h1>
+
+            <p>Clients have big wishlist items.</p>
+
+            <p class="placeholder">EPICS</p>
+
+            <aside class="notes">
+              <p>Clients may specifically call out big stuff (e.g. shopping carts,
+              account managment) or we may be recommending big functionality
+              (e.g. editorial workflows or access control).</p>
+
+              <p>Those things aren't actionable directly because they're huge.</p>
+            </aside>
+          </section>
+
+          <section id="thats-an-epic" data-state="definition">
+            <h1>Let's call that an epic.</h1>
+
+            <dl class="whiteboard">
+              <dt>Epic</dt>
+
+              <dd>
+                A &ldquo;big ticket/story&rdquo; or large piece of functionality.
+                It's not actionable or easily estimated on its own because of
+                its size or complexity, or because it has a lot of parts.
+
+              </dd>
+            </dl>
+
+            <aside class="notes">
+              Depending on product lifecycle, an epic may represent a single
+              unit of valueable functionality, so sometimes epics are only
+              released at once, even if some parts are ready before others.
+            </aside>
+          </section>
+
+          <section id="break-it-down">
+            <h1>What to do with an epic?</h1>
+            <p class="large">Break it down. Into thin vertical slices.</p>
+          </section>
+
+          <section id="silly-image-a" data-state="blackout">
+            <img src="https://pics.me.me/when-the-movie-title-is-said-during-the-movie-omg-16313942.png" alt="That's in the title">
+          </section>
+        </section>
 
         <!-- THIN VERTICAL SLICES -->
         <section>
-          <section id="what-are-slices"></section>
+          <section id="what-are-slices" data-state="idea-intro">
+            <h1>What are thin vertical slices?</h1>
+          </section>
+
+          <section id="thin-slice" data-menu-title="What are thin slices?">
+            <h1>What are thin <del>vertical</del> slices?</h1>
+            <p class="large">
+              Precision drops as complexity increases.
+            </p>
+            <p>
+              Break epics into individual pieces of work.
+            </p>
+
+            <aside class="notes">
+              <p>Humans don't usually estimate very well, and the precision of
+              estimates drops off as the size of the thing being estimated
+              increases.</p>
+
+              <p>A single ticket should be a single, deliverable unit of functionality.</p>
+            </aside>
+          </section>
+
+          <section id="stories-are-useful">
+            <h1>Framing them as Stories</h1>
+
+            <p class="large">It's easier to think about what a user should be
+            able to do when the <em>thing</em> is complete.</p>
+          </section>
+
+          <section id="thats-a-story" data-state="definition">
+            <h1>Let's call that a User Story</h1>
+
+            <dl>
+              <dt>User Story</dt>
+              <dd>
+                <strong>As a ___ I want to ___ so that ___.</strong>
+
+                <p>An identified audience or user persona wants to perform a
+                single action to accomplish a goal.</p>
+              </dd>
+            </dl>
+          </section>
+
+          <section id="story-bike-example">
+            <h1>An Example: Cyclist</h1>
+            <p class="large">As a <em>cyclist</em>, I want to <em>stop the
+            bike</em> so that <em>I don't get hurt</em>.</p>
+
+            <aside class="notes">
+              See how we have a specific type of user identified, a single
+              action, and a clear goal?
+            </aside>
+          </section>
         </section>
 
         <!-- STORY POINTS -->

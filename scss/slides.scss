@@ -2,6 +2,7 @@
 @import '../vendor/revealjs/css/theme/template/settings.scss';
 
 $blue: #006DAF;
+$green: #238b47;
 $orange: #FF9900;
 $grey-lt: #E9E9E9;
 $grey-md: #BCBCBC;
@@ -12,6 +13,7 @@ $red-dk: #990100;
 
 $whitney: 'Whitney SSm A', 'Whitney SSm B', Helvetica, Arial, sans-serif;
 $tungsten: 'Tungsten Narrow A', 'Tungsten Narrow B', sans-serif;
+$marker: 'Permanent Marker', $tungsten;
 
 // Base settings for all themes that can optionally be
 // overridden by the super-theme
@@ -50,6 +52,10 @@ $selectionColor: #fff;
 
 @import '../vendor/revealjs/css/theme/template/theme.scss';
 
+body {
+  transition: background 0.1s ease;
+}
+
 .reveal {
   h1 {
     font-weight: 600;
@@ -57,6 +63,10 @@ $selectionColor: #fff;
     a {
       color: lighten($blue, 10%) !important;
       &:hover { text-decoration: underline !important; }
+    }
+
+    del {
+      color: $grey-md;
     }
   }
 
@@ -104,10 +114,33 @@ $selectionColor: #fff;
     font-style: italic;
   }
 
-  p.citation {
+  .citation {
+    display: block;
     margin-top: 0;
     font-size: 18px;
     font-style: italic;
+  }
+
+  p.placeholder {
+    padding: 1em;
+    background: red;
+    color: white;
+  }
+
+  dl {
+    margin: 0 auto;
+    background-color: $grey-dk;
+    color: $grey-lt;
+    border: {
+      top: 10px solid $grey-md;
+      bottom: 10px solid $grey-md;
+    }
+
+    text-align: center;
+
+    dt, dd {
+      margin: 1em;
+    }
   }
 }
 
@@ -124,5 +157,60 @@ $selectionColor: #fff;
   section.present {
     right: 0;
     text-align: right;
+  }
+}
+
+.definition {
+  body {
+    background-color: $blue;
+  }
+
+  .reveal {
+    color: $grey-lt;
+
+    h1 {
+      color: $grey-lt;
+      font-weight: 300;
+      font-size: 1.5em;
+      text-shadow: none;
+    }
+
+    dt {
+      color: white;
+      font-family: $marker;
+      font-size: 3em;
+      margin: (1em/3) 0;
+    }
+  }
+}
+
+.idea-intro {
+  body {
+    background-color: $green;
+  }
+
+  section.present {
+    h1 {
+      color: $grey-lt;
+    }
+  }
+}
+
+.blackout {
+  body {
+    background-color: black;
+  }
+}
+
+// Make the controls white on darker slides
+.definition, .idea-intro, .blackout {
+  .controls {
+    .controls-arrow:before, .controls-arrow:after {
+      background-color: $grey-lt !important;
+    }
+  }
+
+  .slide-menu-button a, .progress {
+    color: $grey-lt;
   }
 }
