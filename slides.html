@@ -56,27 +56,31 @@
         <!-- BASICS -->
         <section>
           <section id="scrum">
-            <h1>4K uses Scrum</h1>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Scrum_process.svg" alt="">
-            <a href="https://ca.wikipedia.org/wiki/Fitxer:Scrum_process.svg" class="citation">Source</a>
+            <h1>4K uses Scrum&hellip;</h1>
+            <img style="max-height:300px" src="https://camo.githubusercontent.com/9234f82696c57183b21aa4fd7daa6cc48d498ed6/687474703a2f2f7777772e7a656e65786d616368696e612e636f6d2f6173736574732f7468656d65732f7a786d2f696d616765732f706167652d6172746566616374732f736372756d2d70726f636573732d30312e706e67" alt="">
+
+            <p class="placeholder">Replace this image</p>
+
+            <p>&hellip;to manage our projects. I see <em>estimating by complexity</em>
+            and <em>building vertically</em> to be the most useful parts of this system.</p>
 
             <aside class="notes">
-              Scrum is a process that follows agile development principles. We
-              iterate quickly and deliver completed, usable functionality
-              on a regular basis.
+              Scrum is a process that follows agile development principles,
+              focusing on quick itertions and delivery of completed, usable
+              functionality on a regular basis.
             </aside>
           </section>
 
           <section id="new-project">
             <h1>So a new project comes in&hellip;</h1>
 
-            <p>Clients have big wishlist items.</p>
+            <p class="large">Clients have big wishlist items.</p>
 
             <p class="placeholder">EPICS</p>
 
             <aside class="notes">
               <p>Clients may specifically call out big stuff (e.g. shopping carts,
-              account managment) or we may be recommending big functionality
+              user managment) or we may be recommending big functionality
               (e.g. editorial workflows or access control).</p>
 
               <p>Those things aren't actionable directly because they're huge.</p>
@@ -123,16 +127,24 @@
           <section id="thin-slice" data-menu-title="What are thin slices?">
             <h1>What are thin <del>vertical</del> slices?</h1>
             <p class="large">
-              Precision drops as complexity increases.
+              Estimate precision drops as complexity/size increases.
             </p>
-            <p>
-              Break epics into individual pieces of work.
-            </p>
+            <div class="columns">
+              <div>
+                <p>Like making a to-do list.</p>
+              </div>
+              <div>
+                <p>Break epics into individual, actionable <em>pieces</em> of work.</p>
+              </div>
+            </div>
 
             <aside class="notes">
               <p>Humans don't usually estimate very well, and the precision of
               estimates drops off as the size of the thing being estimated
               increases.</p>
+
+              <p>Beyond estimation, it's also harder to collaborate on a big
+              undefined blob of work.</p>
 
               <p>A single ticket should be a single, deliverable unit of functionality.</p>
             </aside>
@@ -143,6 +155,13 @@
 
             <p class="large">It's easier to think about what a user should be
             able to do when the <em>thing</em> is complete.</p>
+
+            <aside class="notes">
+              By focusing on the user's desired actions and goals, you'll be
+              able to write thinner units of work and you won't prescribe
+              technical solutions in your backlog which gives the team more
+              freedom.
+            </aside>
           </section>
 
           <section id="thats-a-story" data-state="definition">
@@ -151,7 +170,7 @@
             <dl>
               <dt>User Story</dt>
               <dd>
-                <strong>As a <u>&emsp;&emsp;</u> I want to <u>&emsp;&emsp;</u> so that <u>&emsp;&emsp;</u>.</strong>
+                <strong class="marker">As a <u>&emsp;&emsp;</u> I want to <u>&emsp;&emsp;</u> so that <u>&emsp;&emsp;</u>.</strong>
 
                 <p>An identified audience or user persona wants to perform a
                 single action to accomplish a goal.</p>
@@ -168,6 +187,45 @@
               See how we have a specific type of user identified, a single
               action, and a clear goal?
             </aside>
+          </section>
+
+          <section id="story-warning" data-state="ojo">
+            <h1>Three Gotchas with Stories</h1>
+            <div class="columns">
+              <div>
+                <p class="large">Personas</p>
+                <p>Should be an actual audience.
+                  Be skeptical of &ldquo;As a user,&rdquo; stories.</p>
+              </div>
+              <div>
+                <p class="large">Actions</p>
+                <p>Avoid technical prescription.</p>
+              </div>
+              <div>
+                <p class="large">Goals</p>
+                <p>Don't add surprise functionality here &rarr; that's a new story.</p>
+              </div>
+            </div>
+
+            <aside class="notes">
+              <p>"As a user" is a basic blueprint, but it can obscure who we're
+              building something for. Is this something "user" wants or something
+              "marketing" wants?</p>
+
+              <p>Keep actions and goals simple, avoid dictating how a story should
+              be implemented or inventing new functionality as part of the
+              goal.</p>
+            </aside>
+          </section>
+
+          <section id="story-bad">
+            <h1>Bad Story</h1>
+            <div class="whiteboard">
+              <p>
+                As a user, I would like to create an account during check-out so that I can see a dashboard with all my past orders.
+              </p>
+            </div>
+            <div class="marker fragment">No identified audience.</div>
           </section>
         </section>
 

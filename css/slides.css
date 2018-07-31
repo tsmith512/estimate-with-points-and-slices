@@ -307,20 +307,38 @@ body {
   font-size: 18px;
   font-style: italic; }
 
+.reveal .marker {
+  font-family: "Permanent Marker", "Tungsten Narrow A", "Tungsten Narrow B", sans-serif; }
+
 .reveal p.placeholder {
   padding: 1em;
   background: red;
   color: white; }
 
-.reveal dl {
+.reveal .whiteboard, .reveal dl {
   margin: 0 auto;
   background-color: #424242;
   color: #E9E9E9;
   border-top: 10px solid #BCBCBC;
   border-bottom: 10px solid #BCBCBC;
   text-align: center; }
-  .reveal dl dt, .reveal dl dd {
+  .reveal .whiteboard dt, .reveal .whiteboard dd, .reveal .whiteboard p, .reveal dl dt, .reveal dl dd, .reveal dl p {
     margin: 1em; }
+
+.reveal .columns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: stretch; }
+  .reveal .columns > div {
+    margin: 0 1em;
+    flex: 1 1; }
+    .reveal .columns > div:first-child {
+      margin-left: 0; }
+    .reveal .columns > div:last-child {
+      margin-right: 0; }
 
 .blackmail body {
   background-image: url("../gfx/blackmail.jpg");
@@ -354,11 +372,25 @@ body {
 .idea-intro section.present h1 {
   color: #E9E9E9; }
 
+.ojo body {
+  background-color: #990100; }
+
+.ojo section.present, .ojo section.present h1 {
+  color: #E9E9E9; }
+
+.ojo section.present p.large {
+  border-bottom-color: #800100;
+  border-top-color: #b30100; }
+  .ojo section.present p.large:before {
+    border-top-color: #800100; }
+  .ojo section.present p.large:after {
+    border-bottom-color: #b30100; }
+
 .blackout body {
   background-color: black; }
 
-.definition .controls .controls-arrow:before, .definition .controls .controls-arrow:after, .idea-intro .controls .controls-arrow:before, .idea-intro .controls .controls-arrow:after, .blackout .controls .controls-arrow:before, .blackout .controls .controls-arrow:after {
+.definition .controls .controls-arrow:before, .idea-intro .controls .controls-arrow:before, .ojo .controls .controls-arrow:before, .blackout .controls .controls-arrow:before, .definition .controls .controls-arrow:after, .idea-intro .controls .controls-arrow:after, .ojo .controls .controls-arrow:after, .blackout .controls .controls-arrow:after {
   background-color: #E9E9E9 !important; }
 
-.definition .slide-menu-button a, .definition .progress, .idea-intro .slide-menu-button a, .idea-intro .progress, .blackout .slide-menu-button a, .blackout .progress {
+.definition .slide-menu-button a, .idea-intro .slide-menu-button a, .ojo .slide-menu-button a, .blackout .slide-menu-button a, .definition .progress, .idea-intro .progress, .ojo .progress, .blackout .progress {
   color: #E9E9E9; }

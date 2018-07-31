@@ -121,13 +121,17 @@ body {
     font-style: italic;
   }
 
+  .marker {
+    font-family: $marker;
+  }
+
   p.placeholder {
     padding: 1em;
     background: red;
     color: white;
   }
 
-  dl {
+  .whiteboard, dl {
     margin: 0 auto;
     background-color: $grey-dk;
     color: $grey-lt;
@@ -138,8 +142,30 @@ body {
 
     text-align: center;
 
-    dt, dd {
+    dt, dd, p {
       margin: 1em;
+    }
+  }
+
+  .columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+
+    > div {
+      margin: 0 1em;
+      flex: 1 1;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }
@@ -161,6 +187,7 @@ body {
 }
 
 .definition {
+  @extend %light-controls;
   body {
     background-color: $blue;
   }
@@ -185,6 +212,7 @@ body {
 }
 
 .idea-intro {
+  @extend %light-controls;
   body {
     background-color: $green;
   }
@@ -196,14 +224,40 @@ body {
   }
 }
 
+.ojo {
+  @extend %light-controls;
+  body {
+    background-color: $red-dk;
+  }
+
+  section.present {
+    &, h1 {
+      color: $grey-lt;
+    }
+
+    p.large {
+      border-bottom-color: darken($red-dk, 5%);
+      border-top-color: lighten($red-dk, 5%);
+
+      &:before {
+        border-top-color: darken($red-dk, 5%);
+      }
+      &:after {
+        border-bottom-color: lighten($red-dk, 5%);
+      }
+    }
+  }
+}
+
 .blackout {
+  @extend %light-controls;
   body {
     background-color: black;
   }
 }
 
 // Make the controls white on darker slides
-.definition, .idea-intro, .blackout {
+%light-controls {
   .controls {
     .controls-arrow:before, .controls-arrow:after {
       background-color: $grey-lt !important;
