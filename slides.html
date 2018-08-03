@@ -176,10 +176,12 @@
                 single action to accomplish a goal.</p>
               </dd>
             </dl>
+
+            <p>Not a Scrum requirement &mdash; an optional extra.</p>
           </section>
 
           <section id="story-bike-example">
-            <h1>An Example: Cyclist</h1>
+            <h1>Example A: Cyclist</h1>
             <p class="large">As a <u class="fragment">cyclist</u>, I want to <u class="fragment">stop the
             bike</u> so that <u class="fragment">I don't get hurt</u>.</p>
 
@@ -218,20 +220,197 @@
             </aside>
           </section>
 
-          <section id="story-bad">
-            <h1>Bad Story</h1>
-            <div class="whiteboard">
-              <p>
-                As a user, I would like to create an account during check-out so that I can see a dashboard with all my past orders.
-              </p>
+          <section id="story-bad" data-state="definition">
+            <h1>Example B: Don't Do This</h1>
+            <dl>
+              <dt>Bad Story</dt>
+              <dd>
+                As a <span class="error">user</span>,<br />
+                I would like to <span class="warning">create an account during check-out</span><br />
+                so that <span class="error">I can see a dashboard</span> with all my past orders.
+              </dd>
+            </dl>
+            <aside class="notes">
+              <ul>
+                <li>No identified audience</li>
+                <li>Technical prescription &mdash; no one actually wants to make
+                an account, that's a hurdle for stuff we give users later</li>
+                <li>Is check-out new?</li>
+                <li>The goal describes a feature surprise</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section id="story-good" data-state="definition">
+            <h1>Example C: This is better</h1>
+            <dl>
+              <dt>Better Story</dt>
+              <dd>
+                As a <span class="good">customer</span>,<br />
+                I would like to <span class="good">save my contact information</span><br />
+                so that <span class="good">I don't have to enter it each time</span>.
+              </dd>
+            </dl>
+            <p class="small"><em>* Assumption: a rudimentary check-out process already exists.</em></p>
+            <aside class="notes">
+              <ul>
+                <li>We have a specific kind of user</li>
+                <li>We've described what they actually want to do</li>
+                <li>The goal addresses why a user wants to save the info</li>
+                <li>We've avoided technical prescription &mdash; this can
+                actually be accomplished without user accounts</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section id="thin-slice-wrapup">
+            <h1>Thin Slices</h1>
+            <div class="columns dividers">
+              <div>Break down your epics.</div>
+              <div>Bite-sized pieces of work.</div>
+              <div>Be user and goal focused.</div>
+              <div>Consider user stories.</div>
             </div>
-            <div class="marker fragment">No identified audience.</div>
+          </section>
+
+          <section id="vertical-slice" data-menu-title="What are vertical slices?">
+            <h1>What are <del>thin</del> vertical slices?</h1>
+            <p class="large">
+              Top-to-bottom implementation of a deliverable feature.
+            </p>
+            <aside class="notes">
+              <ul>
+                <li>Frontend and backend</li>
+                <li>Content model and template</li>
+                <li>Admin UI and frontend component</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section id="cake-is-a-lie">
+            <h1>A <em>slice</em> of cake</h1>
+            <h2>not a <em>layer</em> of cake.</h2>
+            <div class="placeholder">PICTURE</div>
+            <p class="small">
+              Frontend, backend, components, databases, module install, content
+              modeling, design.<br />
+              <strong>Everything a user would need to <del>use the feature</del>
+              complete the story.</strong>
+            </p>
+
+            <aside class="notes">
+              If a thin slice is a small unit of functionality, the vertical
+              slice is everything needed for it to be usable.
+            </aside>
+          </section>
+
+          <section id="vertical-pushback" data-state="ojo">
+            <h1>Push Past the Pushback</h1>
+            <p class="large">
+              Everyone will agree that this sounds like a great <em>idea.</em>
+            </p>
+            <aside class="notes">
+              Then people silo themselves and you end up with frontend
+              components that aren't hooked up to anything. Or admin UI elements
+              that have no frontend effect. <strong>Team effort: if a ticket
+              isn't usable, it isn't deliverable or valuable.</strong>
+            </aside>
+          </section>
+
+          <section id="split-teams">
+            <h1>Frontend and Backend Tickets?</h1>
+            <p class="large">Please no.</p>
+            <div class="columns">
+              <div>
+                <p>Keep tickets user/value focused.</p>
+              </div>
+              <div>
+                <p>Splitting tickets splits team, harder to track progress.</p>
+              </div>
+              <div>
+                <p>Multiple people can work on a single ticket.</p>
+              </div>
+              <div>
+                <p>Use subtasks to split a ticket into bits.</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="slices-wrap-up" data-state="idea-intro">
+            <h1>Thin Vertical Slices enables Iteration</h1>
+            <div class="columns dividers">
+              <div>
+                <p>Keeps team in sync, working on the same areas.</p>
+              </div>
+              <div>
+                <p>Divides up big work into deliverable segments.</p>
+              </div>
+              <div>
+                <p>Reduces waste and cost as requirements change.</p>
+              </div>
+            </div>
           </section>
         </section>
 
         <!-- STORY POINTS -->
         <section>
-          <section id="what-are-points"></section>
+          <section id="how-do-we-estimate">
+            <h1>So how do we estimate these slices?</h1>
+            <p class="large"><del>Hours?</del> Story points!</p>
+          </section>
+
+          <section id="what-are-points" data-state="definition">
+            <h1>Estimate Work by <em>Complexity</em></h1>
+            <dl>
+              <dt>Story Points</dt>
+              <dd>
+                Estimate the <em>relative complexity</em> of a task rather than
+                the time someone thinks it would take to complete.
+              </dd>
+            </dl>
+          </section>
+
+          <section id="why-not-hours" data-state="ojo">
+            <h1>Why not estimate hours?</h1>
+            <div class="columns dividers">
+              <div>
+                <p>Who's hours?</p>
+              </div>
+              <div>
+                <p>What's included?</p>
+              </div>
+              <div>
+                <p>Client expectations?</p>
+              </div>
+            </div>
+
+            <aside class="notes">
+              <ul>
+                <li>You write modules. I write CSS. We won't agree on the
+                hours.</li>
+                <li>Do requirements gathering meetings, code reviews,
+                deployments, testing, and rework get included in an hours
+                estimate?</li>
+                <li>If a task is estimated at 3 hours, what if it doesn't take 3
+                hours? Do clients expect our estimates to be perfect? Will they
+                start to expect an over or under estimation?</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section id="we-can-agree-on-complexity">
+            <h1>We can agree on complexity.</h1>
+            <div class="columns dividers">
+              <div>
+                <p>Add and theme a link field on a page.</p>
+                <p class="good fragment"><strong>Easy peasy.</strong></p>
+              </div>
+              <div>
+                <p>Add taxonomy-powered faceting to a Solr search.</p>
+                <p class="error fragment"><strong>Uh oh.</strong></p>
+              </div>
+            </div>
+          </section>
         </section>
 			</div>
 		</div>

@@ -68,11 +68,21 @@ body {
     del {
       color: $grey-md;
     }
+
+    em {
+      font-style: normal;
+      color: $red-dk;
+    }
   }
 
   h2 {
     text-transform: none;
     color: mix($grey-md, $grey-dk);
+
+    em {
+      font-style: normal;
+      color: $red-dk;
+    }
   }
 
   p {
@@ -80,12 +90,14 @@ body {
   }
 
   p.large {
+    font-size: 36px;
+    font-weight: 700;
+  }
+
+  p.large, .columns.dividers {
     border-bottom: 1px solid #bbb;
     border-top: 1px solid #fff;
     padding: 0.5em 0;
-    font-size: 36px;
-    font-weight: 700;
-
     position: relative;
 
     &:before, &:after {
@@ -125,7 +137,31 @@ body {
     font-family: $marker;
   }
 
-  p.placeholder {
+  .error {
+    color: $red-dk;
+  }
+
+  dl, .whiteboard {
+    .error {
+      color: #FF3333;
+    }
+  }
+
+  .warning {
+    color: $orange;
+  }
+
+  .good {
+    color: $green;
+  }
+
+  dl, .whiteboard {
+    .good {
+      color: lighten($green, 5%);
+    }
+  }
+
+  .placeholder {
     padding: 1em;
     background: red;
     color: white;
@@ -167,6 +203,10 @@ body {
         margin-right: 0;
       }
     }
+
+    &.dividers {
+
+    }
   }
 }
 
@@ -200,6 +240,11 @@ body {
       font-weight: 300;
       font-size: 1.5em;
       text-shadow: none;
+
+      em {
+        color: lighten($blue, 30%);
+        text-shadow: 1px 1px 0 rgba(0,0,0,.5);
+      }
     }
 
     dt {
@@ -207,6 +252,10 @@ body {
       font-family: $marker;
       font-size: 3em;
       margin: (1em/3) 0;
+    }
+
+    p.small {
+      border: 0;
     }
   }
 }
@@ -218,8 +267,22 @@ body {
   }
 
   section.present {
+    color: $grey-lt;
+
     h1 {
       color: $grey-lt;
+    }
+
+    .columns.dividers, p.large {
+      border-bottom-color: darken($green, 5%);
+      border-top-color: lighten($green, 5%);
+
+      &:before {
+        border-top-color: darken($green, 5%);
+      }
+      &:after {
+        border-bottom-color: lighten($green, 5%);
+      }
     }
   }
 }
@@ -235,7 +298,7 @@ body {
       color: $grey-lt;
     }
 
-    p.large {
+    .columns.dividers, p.large {
       border-bottom-color: darken($red-dk, 5%);
       border-top-color: lighten($red-dk, 5%);
 
