@@ -85,6 +85,18 @@ body {
     }
   }
 
+  h3 {
+    text-transform: none;
+    color: mix($grey-md, $grey-dk);
+  }
+
+  // Parent theme provides to specific CSS to add this and I don't like it.
+  section img {
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
   p {
     margin: 1em 0;
   }
@@ -124,6 +136,12 @@ body {
     padding: 1em 0;
     font-size: 24px;
     font-style: italic;
+  }
+
+  // If we have a small immediately after a large, don't double-border
+  p.large + p.small {
+    border: 0;
+    padding: 0;
   }
 
   .citation {
