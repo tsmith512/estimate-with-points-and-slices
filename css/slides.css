@@ -265,33 +265,56 @@ body {
       text-decoration: underline !important; }
   .reveal h1 del {
     color: #BCBCBC; }
+  .reveal h1 em {
+    font-style: normal;
+    color: #990100; }
 
 .reveal h2 {
   text-transform: none;
   color: #7f7f7f; }
+  .reveal h2 em {
+    font-style: normal;
+    color: #990100; }
+
+.reveal h3 {
+  text-transform: none;
+  color: #7f7f7f; }
+
+.reveal section img {
+  border: 0;
+  box-shadow: none;
+  background: transparent; }
 
 .reveal p {
   margin: 1em 0; }
 
 .reveal p.large {
+  font-size: 36px;
+  font-weight: 700; }
+
+.reveal p.large, .reveal .columns.dividers {
   border-bottom: 1px solid #bbb;
   border-top: 1px solid #fff;
   padding: 0.5em 0;
-  font-size: 36px;
-  font-weight: 700;
   position: relative; }
-  .reveal p.large:before, .reveal p.large:after {
+  .reveal p.large:before, .reveal p.large:after, .reveal .columns.dividers:before, .reveal .columns.dividers:after {
     position: absolute;
     left: 0;
     right: 0;
     content: " ";
     font-size: 0; }
-  .reveal p.large:before {
+  .reveal p.large:before, .reveal .columns.dividers:before {
     top: -2px;
     border-top: 1px solid #bbb; }
-  .reveal p.large:after {
+  .reveal p.large:after, .reveal .columns.dividers:after {
     bottom: -2px;
     border-bottom: 1px solid #fff; }
+
+.reveal hr {
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #fff;
+  border-left: 0;
+  border-right: 0; }
 
 .reveal p.small {
   border-style: dotted;
@@ -300,6 +323,10 @@ body {
   padding: 1em 0;
   font-size: 24px;
   font-style: italic; }
+
+.reveal p.large + p.small {
+  border: 0;
+  padding: 0; }
 
 .reveal .citation {
   display: block;
@@ -310,7 +337,22 @@ body {
 .reveal .marker {
   font-family: "Permanent Marker", "Tungsten Narrow A", "Tungsten Narrow B", sans-serif; }
 
-.reveal p.placeholder {
+.reveal .error {
+  color: #990100; }
+
+.reveal dl .error, .reveal .whiteboard .error {
+  color: #FF3333; }
+
+.reveal .warning {
+  color: #FF9900; }
+
+.reveal .good {
+  color: #238b47; }
+
+.reveal dl .good, .reveal .whiteboard .good {
+  color: #289f51; }
+
+.reveal .placeholder {
   padding: 1em;
   background: red;
   color: white; }
@@ -332,6 +374,8 @@ body {
   justify-content: flex-start;
   align-content: stretch;
   align-items: stretch; }
+  .reveal .columns.vcenter {
+    align-items: center; }
   .reveal .columns > div {
     margin: 0 1em;
     flex: 1 1; }
@@ -349,6 +393,10 @@ body {
   .blackmail body section.present {
     right: 0;
     text-align: right; }
+    .blackmail body section.present p.large {
+      margin-left: 35%; }
+      .blackmail body section.present p.large strong {
+        color: #cc0100; }
 
 .definition body {
   background-color: #006DAF; }
@@ -360,17 +408,31 @@ body {
     font-weight: 300;
     font-size: 1.5em;
     text-shadow: none; }
+    .definition .reveal h1 em {
+      color: #49baff;
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5); }
   .definition .reveal dt {
     color: white;
     font-family: "Permanent Marker", "Tungsten Narrow A", "Tungsten Narrow B", sans-serif;
     font-size: 3em;
     margin: 0.33333em 0; }
+  .definition .reveal p.small {
+    border: 0; }
 
 .idea-intro body {
   background-color: #238b47; }
 
-.idea-intro section.present h1 {
+.idea-intro section.present {
   color: #E9E9E9; }
+  .idea-intro section.present h1 {
+    color: #E9E9E9; }
+  .idea-intro section.present .columns.dividers, .idea-intro section.present p.large {
+    border-bottom-color: #1e773d;
+    border-top-color: #289f51; }
+    .idea-intro section.present .columns.dividers:before, .idea-intro section.present p.large:before {
+      border-top-color: #1e773d; }
+    .idea-intro section.present .columns.dividers:after, .idea-intro section.present p.large:after {
+      border-bottom-color: #289f51; }
 
 .ojo body {
   background-color: #990100; }
@@ -378,12 +440,12 @@ body {
 .ojo section.present, .ojo section.present h1 {
   color: #E9E9E9; }
 
-.ojo section.present p.large {
+.ojo section.present .columns.dividers, .ojo section.present p.large {
   border-bottom-color: #800100;
   border-top-color: #b30100; }
-  .ojo section.present p.large:before {
+  .ojo section.present .columns.dividers:before, .ojo section.present p.large:before {
     border-top-color: #800100; }
-  .ojo section.present p.large:after {
+  .ojo section.present .columns.dividers:after, .ojo section.present p.large:after {
     border-bottom-color: #b30100; }
 
 .blackout body {
