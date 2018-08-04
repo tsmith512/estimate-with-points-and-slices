@@ -76,7 +76,7 @@
 
             <p class="large">Clients have big wishlist items.</p>
 
-            <p class="placeholder">EPICS</p>
+            <img src="gfx/epics.png" alt="Big wishlist items are called epics">
 
             <aside class="notes">
               <p>Clients may specifically call out big stuff (e.g. shopping carts,
@@ -110,6 +110,7 @@
 
           <section id="break-it-down">
             <h1>What to do with an epic?</h1>
+            <img src="gfx/breakdown.png" alt="Different components on a page marked as different tickets" style="max-width:60%">
             <p class="large">Break it down. Into thin vertical slices.</p>
           </section>
 
@@ -288,20 +289,30 @@
           </section>
 
           <section id="cake-is-a-lie">
-            <h1>A <em>slice</em> of cake</h1>
-            <h2>not a <em>layer</em> of cake.</h2>
-            <div class="placeholder">PICTURE</div>
-            <p class="small">
-              Frontend, backend, components, databases, module install, content
-              modeling, design.<br />
-              <strong>Everything a user would need to <del>use the feature</del>
-              complete the story.</strong>
-            </p>
+            <div class="columns vcenter">
+              <div>
+                <h1>A <em>slice</em> of cake</h1>
+                <h2>not a <em>layer</em> of cake.</h2>
+                <p class="small">
+                  Frontend, backend, components, databases, module install, content
+                  modeling, design.<br />
+                  <strong>Everything a user would need to <del>use the feature</del>
+                  complete the story.</strong>
+                </p>
+              </div>
+              <div>
+                <img src="gfx/cake-is-a-lie.png" alt="A layer cake, with each layer labeled as Model, View, then Controller.">
+              </div>
+            </div>
 
             <aside class="notes">
               If a thin slice is a small unit of functionality, the vertical
               slice is everything needed for it to be usable.
             </aside>
+          </section>
+
+          <section id="silly-image-b" data-state="blackout">
+            <img src="https://media.giphy.com/media/MS3SMJTnJndT2/giphy.gif" alt="Animation from Portal">
           </section>
 
           <section id="vertical-pushback" data-state="ojo">
@@ -330,10 +341,35 @@
               <div>
                 <p>Multiple people can work on a single ticket.</p>
               </div>
+            </div>
+          </section>
+
+          <section id="frontend-backend-waterfall">
+            <h1>And here's why</h1>
+            <h2>Split tickets &rarr; Waterfall</h2>
+            <img src="gfx/waterfall.png" alt="Waterfall diagram showing backend and frontend split, with a warning">
+          </section>
+
+          <section id="split-alternatives">
+            <h1>Instead, we have tools for this</h1>
+            <h2>In Jira, consider extra board columns or subtasks</h2>
+            <div class="columns vcenter">
               <div>
-                <p>Use subtasks to split a ticket into bits.</p>
+                <img src="gfx/extra-column.png" alt="A scrum/kanban board with frontend and backend columns">
+              </div>
+              <div>
+                <img src="gfx/jira-subtask-mini.png" alt="An abbreviated view of a Jira issue showing subtasks">
               </div>
             </div>
+
+            <aside class="notes">
+              <p>Column: self-explanatory, but imposes an "order" which may
+              be unnecessary</p>
+
+              <p>Subtask: Jira will keep the parent issue open until every sub
+              is closed, but you can tackle 'em in any order and each can go
+              into every status column.</p>
+            </aside>
           </section>
 
           <section id="slices-wrap-up" data-state="idea-intro">
@@ -366,7 +402,7 @@
         <!-- STORY POINTS -->
         <section>
           <section id="how-do-we-estimate">
-            <h1>So how do we estimate these slices?</h1>
+            <h1>How do we estimate slices?</h1>
             <p class="large"><del>Hours?</del> Story points!</p>
           </section>
 
@@ -411,14 +447,16 @@
 
           <section id="we-can-agree-on-complexity">
             <h1>We can agree on complexity.</h1>
-            <div class="columns dividers">
+            <div class="columns vcenter">
               <div>
-                <p>Add and theme a link field on a page.</p>
-                <p class="good fragment"><strong>Easy peasy.</strong></p>
+                <img src="gfx/charts-easy-vs-hard.png" alt="Two meaningless charts, one looks simple and one looks complicated.">
               </div>
               <div>
-                <p>Add taxonomy-powered faceting to a Solr search.</p>
-                <p class="error fragment"><strong>Uh oh.</strong></p>
+                <p>Add and theme a link field on a page.
+                <span class="good fragment"><strong>Easy peasy.</strong></span></p>
+                <hr>
+                <p>Add taxonomy-powered faceting to a Solr search.
+                <span class="error fragment"><strong>Uh oh.</strong></span></p>
               </div>
             </div>
             <aside class="notes">
@@ -432,8 +470,19 @@
             <h1>And from there, we can extrapolate a timeline</h1>
             <dl>
               <dt>Velocity</dt>
-              <dd>Over time, the number of story points a team can build in a
-              sprint or given work cycle will tend toward an average.</dd>
+              <dd>
+                <div class="columns vcenter">
+                  <div>
+                    <img src="gfx/velocity-chart.png" alt="A sketch velocity chart">
+                  </div>
+                  <div>
+                    <p>
+                      Over time, the number of story points a team can build in a
+                      sprint or given work cycle will tend toward an average.
+                    </p>
+                  </div>
+                </div>
+              </dd>
             </dl>
 
             <aside class="notes">

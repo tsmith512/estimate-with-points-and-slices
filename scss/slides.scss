@@ -129,6 +129,12 @@ body {
     }
   }
 
+  hr {
+    border-top: 1px solid #bbb;
+    border-bottom: 1px solid #fff;
+    border-left: 0;
+    border-right: 0;
+  }
   p.small {
     border-style: dotted;
     border-color: #bbb;
@@ -208,6 +214,10 @@ body {
     justify-content: flex-start;
     align-content: stretch;
     align-items: stretch;
+
+    &.vcenter {
+      align-items: center;
+    }
 
     > div {
       margin: 0 1em;
