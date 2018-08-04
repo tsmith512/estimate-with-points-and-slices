@@ -1,0 +1,824 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Estimating for Iteration: Story Points and Thin Vertical Slices | Taylor Smith</title>
+
+    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6795652/627226/css/fonts.css" />
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+
+
+		<link rel="stylesheet" href="vendor/revealjs/css/reveal.css">
+		<link rel="stylesheet" href="css/slides.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="vendor/revealjs/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'vendor/revealjs/css/print/pdf.css' : 'vendor/revealjs/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+        <!-- INTRO INFORMATION -->
+				<section>
+          <section id="title">
+            <h1>Estimating for Iteration</h1>
+            <p class="large">with Thin Vertical Slices and Story Points
+            <a href="http://tsmith512.github.io/estimate-with-points-and-slices">tsmith512.github.io/estimate-with-points-and-slices</a></p>
+          </section>
+
+          <section id="me" data-state="blackmail">
+            <h1>Taylor Smith</h1>
+            <h2>Product Owner <br/> @ <a href="https://www.fourkitchens.com">Four Kitchens</a></h2>
+
+            <p>
+                <strong>tsmith512</strong> on
+                <a href="https://github.com/tsmith512">Github</a>,
+                <a href="https://twitter.com/tsmith512">Twitter</a>,
+                <br />
+                <a href="https://linkedin.com/in/tsmith512">LinkedIn</a>,
+                <a href="https://www.drupal.org/u/tsmith512">Drupal.org</a>,
+                <a href="https://www.instagram.com/tsmith512/">Instagram</a>, and <br/>
+                <strong>sometimes seen at <a href="http://www.fourkitchens.com">Four Kitchens</a>.</strong>
+            </p>
+          </section>
+        </section>
+
+        <!-- BASICS -->
+        <section>
+          <section id="scrum">
+            <h1>4K uses Scrum&hellip;</h1>
+            <img style="max-height:300px" src="https://camo.githubusercontent.com/9234f82696c57183b21aa4fd7daa6cc48d498ed6/687474703a2f2f7777772e7a656e65786d616368696e612e636f6d2f6173736574732f7468656d65732f7a786d2f696d616765732f706167652d6172746566616374732f736372756d2d70726f636573732d30312e706e67" alt="">
+
+            <p>&hellip;to manage our projects. I see <em>estimating by complexity</em>
+            and <em>building vertically</em> to be the most useful parts of this system.</p>
+
+            <aside class="notes">
+              Scrum is a process that follows agile development principles,
+              focusing on quick itertions and delivery of completed, usable
+              functionality on a regular basis.
+            </aside>
+          </section>
+
+          <section id="new-project">
+            <h1>So a new project comes in&hellip;</h1>
+
+            <p class="large">Clients have big wishlist items.</p>
+
+            <img src="gfx/epics.png" alt="Big wishlist items are called epics">
+
+            <aside class="notes">
+              <p>Clients may specifically call out big stuff (e.g. shopping carts,
+              user managment) or we may be recommending big functionality
+              (e.g. editorial workflows or access control).</p>
+
+              <p>Those things aren't actionable directly because they're huge.</p>
+            </aside>
+          </section>
+
+          <section id="thats-an-epic" data-state="definition">
+            <h1>Let's call that an epic.</h1>
+
+            <dl class="whiteboard">
+              <dt>Epic</dt>
+
+              <dd>
+                A &ldquo;big ticket/story&rdquo; or large piece of functionality.
+                It's not actionable or easily estimated on its own because of
+                its size or complexity, or because it has a lot of parts.
+
+              </dd>
+            </dl>
+
+            <aside class="notes">
+              Depending on product lifecycle, an epic may represent a single
+              unit of valueable functionality, so sometimes epics are only
+              released at once, even if some parts are ready before others.
+            </aside>
+          </section>
+
+          <section id="break-it-down">
+            <h1>What to do with an epic?</h1>
+            <img src="gfx/breakdown.png" alt="Different components on a page marked as different tickets" style="max-width:60%">
+            <p class="large">Break it down. Into thin vertical slices.</p>
+          </section>
+
+          <section id="silly-image-a" data-state="blackout">
+            <img src="https://pics.me.me/when-the-movie-title-is-said-during-the-movie-omg-16313942.png" alt="That's in the title">
+          </section>
+        </section>
+
+        <!-- THIN VERTICAL SLICES -->
+        <section>
+          <section id="what-are-slices" data-state="idea-intro">
+            <h1>What are thin vertical slices?</h1>
+          </section>
+
+          <section id="thin-slice" data-menu-title="What are thin slices?">
+            <h1>What are thin <del>vertical</del> slices?</h1>
+            <p class="large">
+              Estimate precision drops as complexity/size increases.
+            </p>
+            <div class="columns">
+              <div>
+                <p>Like making a to-do list.</p>
+              </div>
+              <div>
+                <p>Break epics into individual, actionable <em>pieces</em> of work.</p>
+              </div>
+            </div>
+
+            <aside class="notes">
+              <p>Humans don't usually estimate very well, and the precision of
+              estimates drops off as the size of the thing being estimated
+              increases.</p>
+
+              <p>Beyond estimation, it's also harder to collaborate on a big
+              undefined blob of work.</p>
+
+              <p>A single ticket should be a single, deliverable unit of functionality.</p>
+            </aside>
+          </section>
+
+          <section id="stories-are-useful">
+            <h1>Framing them as Stories</h1>
+
+            <p class="large">It's easier to think about what a user should be
+            able to do when the <em>thing</em> is complete.</p>
+
+            <aside class="notes">
+              By focusing on the user's desired actions and goals, you'll be
+              able to write thinner units of work and you won't prescribe
+              technical solutions in your backlog which gives the team more
+              freedom.
+            </aside>
+          </section>
+
+          <section id="thats-a-story" data-state="definition">
+            <h1>Let's call that a User Story</h1>
+
+            <dl>
+              <dt>User Story</dt>
+              <dd>
+                <strong class="marker">As a <u>&emsp;&emsp;</u> I want to <u>&emsp;&emsp;</u> so that <u>&emsp;&emsp;</u>.</strong>
+
+                <p>An identified audience or user persona wants to perform a
+                single action to accomplish a goal.</p>
+              </dd>
+            </dl>
+
+            <p>Not a Scrum requirement &mdash; an optional extra.</p>
+          </section>
+
+          <section id="story-bike-example">
+            <h1>Example A: Cyclist</h1>
+            <p class="large">As a <u class="fragment">cyclist</u>, I want to <u class="fragment">stop the
+            bike</u> so that <u class="fragment">I don't get hurt</u>.</p>
+
+            <aside class="notes">
+              See how we have a specific type of user identified, a single
+              action, and a clear goal?
+            </aside>
+          </section>
+
+          <section id="story-warning" data-state="ojo">
+            <h1>Three Gotchas with Stories</h1>
+            <div class="columns">
+              <div>
+                <p class="large">Personas</p>
+                <p>Should be an actual audience.
+                  Be skeptical of &ldquo;As a user,&rdquo; stories.</p>
+              </div>
+              <div>
+                <p class="large">Actions</p>
+                <p>Avoid technical prescription.</p>
+              </div>
+              <div>
+                <p class="large">Goals</p>
+                <p>Don't add surprise functionality here &rarr; that's a new story.</p>
+              </div>
+            </div>
+
+            <aside class="notes">
+              <p>"As a user" is a basic blueprint, but it can obscure who we're
+              building something for. Is this something "user" wants or something
+              "marketing" wants?</p>
+
+              <p>Keep actions and goals simple, avoid dictating how a story should
+              be implemented or inventing new functionality as part of the
+              goal.</p>
+            </aside>
+          </section>
+
+          <section id="story-bad" data-state="definition">
+            <h1>Example B: Don't Do This</h1>
+            <dl>
+              <dt>Bad Story</dt>
+              <dd>
+                As a <span class="error">user</span>,<br />
+                I would like to <span class="warning">create an account during check-out</span><br />
+                so that <span class="error">I can see a dashboard</span> with all my past orders.
+              </dd>
+            </dl>
+            <aside class="notes">
+              <ul>
+                <li>No identified audience</li>
+                <li>Technical prescription &mdash; no one actually wants to make
+                an account, that's a hurdle for stuff we give users later</li>
+                <li>Is check-out new?</li>
+                <li>The goal describes a feature surprise</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section id="story-good" data-state="definition">
+            <h1>Example C: This is better</h1>
+            <dl>
+              <dt>Better Story</dt>
+              <dd>
+                As a <span class="good">customer</span>,<br />
+                I would like to <span class="good">save my contact information</span><br />
+                so that <span class="good">I don't have to enter it each time</span>.
+              </dd>
+            </dl>
+            <p class="small"><em>* Assumption: a rudimentary check-out process already exists.</em></p>
+            <aside class="notes">
+              <ul>
+                <li>We have a specific kind of user</li>
+                <li>We've described what they actually want to do</li>
+                <li>The goal addresses why a user wants to save the info</li>
+                <li>We've avoided technical prescription &mdash; this can
+                actually be accomplished without user accounts</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section id="thin-slice-wrapup">
+            <h1>Thin Slices</h1>
+            <div class="columns dividers">
+              <div>Break down your epics.</div>
+              <div>Bite-sized pieces of work.</div>
+              <div>Be user and goal focused.</div>
+              <div>Consider user stories.</div>
+            </div>
+          </section>
+
+          <section id="vertical-slice" data-menu-title="What are vertical slices?">
+            <h1>What are <del>thin</del> vertical slices?</h1>
+            <p class="large">
+              Top-to-bottom implementation of a deliverable feature.
+            </p>
+            <aside class="notes">
+              <ul>
+                <li>Frontend and backend</li>
+                <li>Content model and template</li>
+                <li>Admin UI and frontend component</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section id="cake-is-a-lie">
+            <div class="columns vcenter">
+              <div>
+                <h1>A <em>slice</em> of cake</h1>
+                <h2>not a <em>layer</em> of cake.</h2>
+                <p class="small">
+                  Frontend, backend, components, databases, module install, content
+                  modeling, design.<br />
+                  <strong>Everything a user would need to <del>use the feature</del>
+                  complete the story.</strong>
+                </p>
+              </div>
+              <div>
+                <img src="gfx/cake-is-a-lie.png" alt="A layer cake, with each layer labeled as Model, View, then Controller.">
+              </div>
+            </div>
+
+            <aside class="notes">
+              If a thin slice is a small unit of functionality, the vertical
+              slice is everything needed for it to be usable.
+            </aside>
+          </section>
+
+          <section id="silly-image-b" data-state="blackout">
+            <img src="https://media.giphy.com/media/MS3SMJTnJndT2/giphy.gif" alt="Animation from Portal">
+          </section>
+
+          <section id="vertical-pushback" data-state="ojo">
+            <h1>Push Past the Pushback</h1>
+            <p class="large">
+              Everyone will agree that this sounds like a great <em>idea.</em>
+            </p>
+            <aside class="notes">
+              Then people silo themselves and you end up with frontend
+              components that aren't hooked up to anything. Or admin UI elements
+              that have no frontend effect. <strong>Team effort: if a ticket
+              isn't usable, it isn't deliverable or valuable.</strong>
+            </aside>
+          </section>
+
+          <section id="split-teams">
+            <h1>Frontend and Backend Tickets?</h1>
+            <p class="large">Please no.</p>
+            <div class="columns">
+              <div>
+                <p>Keep tickets user/value focused.</p>
+              </div>
+              <div>
+                <p>Splitting tickets splits team, harder to track progress.</p>
+              </div>
+              <div>
+                <p>Multiple people can work on a single ticket.</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="frontend-backend-waterfall">
+            <h1>And here's why</h1>
+            <h2>Split tickets &rarr; Waterfall</h2>
+            <img src="gfx/waterfall.png" alt="Waterfall diagram showing backend and frontend split, with a warning">
+          </section>
+
+          <section id="split-alternatives">
+            <h1>Instead, we have tools for this</h1>
+            <h2>In Jira, consider extra board columns or subtasks</h2>
+            <div class="columns vcenter">
+              <div>
+                <img src="gfx/extra-column.png" alt="A scrum/kanban board with frontend and backend columns">
+              </div>
+              <div>
+                <img src="gfx/jira-subtask-mini.png" alt="An abbreviated view of a Jira issue showing subtasks">
+              </div>
+            </div>
+
+            <aside class="notes">
+              <p>Column: self-explanatory, but imposes an "order" which may
+              be unnecessary</p>
+
+              <p>Subtask: Jira will keep the parent issue open until every sub
+              is closed, but you can tackle 'em in any order and each can go
+              into every status column.</p>
+            </aside>
+          </section>
+
+          <section id="slices-wrap-up" data-state="idea-intro">
+            <h1>Thin Vertical Slices enables Iteration</h1>
+            <div class="columns dividers">
+              <div>
+                <p>Keeps team in sync, working on the same areas.</p>
+              </div>
+              <div>
+                <p>Divides up big work into deliverable segments.</p>
+              </div>
+              <div>
+                <p>Reduces waste and cost as requirements change.</p>
+              </div>
+            </div>
+
+            <aside class="notes">
+              <p>There are exceptions to every rule. On rare occasion, it can be
+              useful to split tickets horizontally. Planning a migration &rarr;
+              content modeling. Big content rewrite &rarr; editorial tools.</p>
+
+              <p>But even then, you're building what a user needs, you're just
+              looking at different users. <strong>But you have to make sure you
+              account for every layer you haven't built yet for every feature
+              you touched.</strong></p>
+            </aside>
+          </section>
+        </section>
+
+        <!-- STORY POINTS -->
+        <section>
+          <section id="how-do-we-estimate">
+            <h1>How do we estimate slices?</h1>
+            <p class="large"><del>Hours?</del> Story points!</p>
+          </section>
+
+          <section id="what-are-points" data-state="definition">
+            <h1>Estimate Work by <em>Complexity</em></h1>
+            <dl>
+              <dt>Story Points</dt>
+              <dd>
+                Estimate the <em>relative complexity</em> of a task rather than
+                the time someone thinks it would take to complete.
+              </dd>
+            </dl>
+          </section>
+
+          <section id="why-not-hours" data-state="ojo">
+            <h1>Why not estimate hours?</h1>
+            <div class="columns dividers">
+              <div>
+                <p>Who's hours?</p>
+              </div>
+              <div>
+                <p>What's included?</p>
+              </div>
+              <div>
+                <p>Client expectations?</p>
+              </div>
+            </div>
+
+            <aside class="notes">
+              <ul>
+                <li>You write modules. I write CSS. We won't agree on the
+                hours.</li>
+                <li>Do requirements gathering meetings, code reviews,
+                deployments, testing, and rework get included in an hours
+                estimate?</li>
+                <li>If a task is estimated at 3 hours, what if it doesn't take 3
+                hours? Do clients expect our estimates to be perfect? Will they
+                start to expect an over or under estimation?</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section id="we-can-agree-on-complexity">
+            <h1>We can agree on complexity.</h1>
+            <div class="columns vcenter">
+              <div>
+                <img src="gfx/charts-easy-vs-hard.png" alt="Two meaningless charts, one looks simple and one looks complicated.">
+              </div>
+              <div>
+                <p>Add and theme a link field on a page.
+                <span class="good fragment"><strong>Easy peasy.</strong></span></p>
+                <hr>
+                <p>Add taxonomy-powered faceting to a Solr search.
+                <span class="error fragment"><strong>Uh oh.</strong></span></p>
+              </div>
+            </div>
+            <aside class="notes">
+              I can't tell you how much a motorcycle or a car or an airplane
+              weighs, but I can tell you that a motorcycle weigs less than both,
+              and a car is somewhere in the middle.
+            </aside>
+          </section>
+
+          <section id="velocity" data-state="definition">
+            <h1>And from there, we can extrapolate a timeline</h1>
+            <dl>
+              <dt>Velocity</dt>
+              <dd>
+                <div class="columns vcenter">
+                  <div>
+                    <img src="gfx/velocity-chart.png" alt="A sketch velocity chart">
+                  </div>
+                  <div>
+                    <p>
+                      Over time, the number of story points a team can build in a
+                      sprint or given work cycle will tend toward an average.
+                    </p>
+                  </div>
+                </div>
+              </dd>
+            </dl>
+
+            <aside class="notes">
+              <p>It's less granular than hours, but often more accurate. If you
+              know the team will work a set number of hours in a sprint/cycle,
+              you can estimate the number of points they can complete.</p>
+
+              <p>In Scrum, teams should commit to a sprint <em>they agree is
+              realistic</em> and then work to meet that commitment. That helps
+              you build a schedule. Usually stakeholders are more interested in
+              when a feature will be delivered.</p>
+            </aside>
+          </section>
+
+          <section id="build-a-sprint">
+            <h1>Informed Choices</h1>
+            <p class="large">Knowing a team's velocity and stories' sizes, the
+            Product Owner can make an informed choice about what goes in a
+            sprint.
+            </p>
+
+            <aside class="notes">
+              Do you want four motorcycles and two cars, or do you want one
+              airplane this sprint?
+            </aside>
+          </section>
+
+          <section id="math-is-your-enemy" data-state="ojo">
+            <h1>Don't share your math</h1>
+            <p class="large">Velocity &divide; Hours per Cycle = Points per Hour</p>
+            <p class="small">Just keep it to yourself.</p>
+
+            <aside class="notes">
+              Don't talk about that calculation. Use it for budget forecasting,
+              but as soon as you talk about it, the team starts to pick story
+              points based on the hours calculation and clients start to assume
+              that points are a fixed hours multiplier.
+            </aside>
+          </section>
+
+          <section id="measure">
+            <h1>&ldquo;Pseudo Fibonacci&rdquo; Numbers</h1>
+            <h2>Or: A scale that accounts for uncertainty at size.</h2>
+
+            <img src="gfx/story-points-numbers.png" alt="1, 2, 3, 5, 8, 13, 20, 40" style="max-width: 70%;">
+
+            <div class="columns">
+              <div class="fragment">
+                <p><strong>1 = Check one box.</strong><br />
+                  It's never just a 1.</p>
+              </div>
+              <div class="fragment">
+                <p><strong>20 or 40? Epic.</strong><br />
+                  Break it down.</p>
+              </div>
+              <div class="fragment">
+                <p><strong>Not pictured:</strong><br />
+                2, 40, and 100.</p>
+              </div>
+            </div>
+
+            <p class="small">Pick a size by comparing the scope of other
+            stories, not time estimates.</p>
+
+            <aside class="notes">
+              <p>One reason we broke epics into thin slices is because humans have
+              a hard time estimating with precision as the thing becomes bigger
+              or more complicated. This applies with story points, too.</p>
+
+              <p>Shirt sizes can help if points are a problem. Small = 3. XL =
+              13. I don't like it as much, but you can only say "points are not
+              hours" so many times.</p>
+
+              <p>Also, 20 and 40 <em>are valid estimates</em>, but it's a sign
+              that the team probably shouldn't take on the story until it is
+              further defined and broken down.</p>
+            </aside>
+          </section>
+
+          <section id="stick-to-the-size" data-state="ojo">
+            <h1>Stick to the Sizes</h1>
+            <div class="columns dividers">
+              <div>
+                <p>Don't use numbers in the middle. Round <em>up</em> to account
+                for complexity and unknowns. Round <em>down</em> to timebox.</p>
+              </div>
+              <div>
+                <p>Don't change size retroactively if easier or harder than
+                anticipated. Trends will reflect in velocity.</p>
+              </div>
+            </div>
+
+            <aside class="notes">
+              <p>And don't change the size of a story if it isn't finished at
+              the end of a sprint. That story rolls into the next sprint. Yes,
+              there will be a drop in points this sprint, but that reflects that
+              less was deliverable and completed this sprint. And next sprint
+              will get a boost for the quick finish, so it'll even out.</p>
+
+              <p>Also, when gathering information for a story or working on
+              adjustments, the size is a litmus test for if something is a scope
+              change. Is it still an 8?</p>
+            </aside>
+          </section>
+        </section>
+
+        <!-- JIRA INFO -->
+        <section>
+          <section id="tools" data-state="idea-intro">
+            <h1>How can our tools help?</h1>
+            <p class="large">Sample workflow and reports from Jira.</p>
+          </section>
+
+          <section id="jira-subtasks">
+            <h1>Subtasks</h1>
+            <h2>To split the &ldquo;layers&rdquo; of a ticket.</h2>
+
+            <div class="columns vcenter">
+              <div>
+                <img src="gfx/jira-subtask-mini.png" alt="Show subtasks from an issue detail view">
+              </div>
+              <div>
+                <ul>
+                  <li>Subtasks track through sprints until the parent closes.</li>
+                  <li>Assign different people, different statuses to each piece.</li>
+                  <li>Each task has its own detail view and comment threads.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section id="jira-columns">
+            <h1>Columns</h1>
+            <h2>To add workflow steps</h2>
+
+            <div class="columns vcenter">
+              <div>
+                <ul>
+                  <li>If each ticket needs the same steps in the same order.</li>
+                  <li>Team members can remain assigned or hand-off.</li>
+                  <li>This can get messy. Clearly... &rarr;</li>
+                </ul>
+              </div>
+              <div>
+                <img src="gfx/jira-board-columns.png" alt="A Jira board with way too many columns">
+              </div>
+            </div>
+
+            <aside class="notes">
+              Columns read: To Do, Needs Info (!!!), In Backend, Ready for Frontend, In Frontend, Code Review, PO Review, Client Review, Done.
+            </aside>
+          </section>
+
+          <section id="jira-velocity">
+            <h1>Velocity Chart</h1>
+            <h2>To visualize how fast story points are completed</h2>
+
+            <div class="columns vcenter">
+              <div>
+                <img src="gfx/jira-velocity.png" alt="Jira's Velocity chart">
+              </div>
+              <div>
+                <ul>
+                  <li>Timeline of sprints, points committed, and points completed.</li>
+                  <li>Lots of missed goals here, new team member added in Sprint 6.</li>
+                  <li>Even with ambitious commitments, we knew to expect 60-ish points per sprint.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section id="jira-version-a">
+            <h1>Version Report</h1>
+
+            <img src="gfx/jira-version-rep-a.png" alt="Jira's Version Report">
+
+            <aside class="notes">
+              <p>Shows a timeline of: unsized, sized but incomplete, sized and
+              complete issues.</p>
+
+              <p>Draws a line from 0 points at Release start date to completed
+              points and current date.</p>
+
+              <p>Then extrapolates lines using current, optimistic, and pessimistic <em>rate</em>
+              from current progress/date to all points completed.</p>
+
+              <p><strong>Resulting in estimated date for release ready to ship.</strong></p>
+            </aside>
+          </section>
+
+          <section id="jira-version-b">
+            <h1>Version Report</h1>
+            <h2>ZOMG.</h2>
+
+            <div class="columns vcenter">
+              <div>
+                <ul>
+                  <li>Timeline of total issues and completed issues <em>by points</em></li>
+                  <li>Adds line from 0 to current points, current date</li>
+                  <li>Extrapolates from current to completed points</li>
+                  <li><strong>Resulting in estimated <em>date</em></strong></li>
+                </ul>
+              </div>
+              <div>
+                <img src="gfx/jira-version-rep-a.png" alt="Jira's Version Report">
+              </div>
+            </div>
+
+            <aside class="notes">
+              <p>Shows a timeline of: unsized, sized but incomplete, sized and
+              complete issues.</p>
+
+              <p>Draws a line from 0 points at Release start date to completed
+              points and current date.</p>
+
+              <p>Then extrapolates lines using current, optimistic, and pessimistic <em>rate</em>
+              from current progress/date to all points completed.</p>
+
+              <p><strong>Resulting in estimated date for release ready to ship.</strong></p>
+            </aside>
+          </section>
+
+          <section id="jira-release-burndown-a">
+            <h1>Release Burndown</h1>
+            <img src="gfx/jira-release-burndown.png" alt="Jira's Release Burndown Chart">
+          </section>
+
+          <section id="jira-release-burndown-b">
+            <h1>Release Burndown</h1>
+            <h2>An alternate view of the Version Report</h2>
+
+            <div class="columns vcenter">
+              <div>
+                <p>Similar info to the version report, but shows scope creep
+                more clearly and recommends remaining sprints instead of release
+                date.</p>
+              </div>
+              <div>
+                <img src="gfx/jira-release-burndown.png" alt="Jira's Release Burndown Chart">
+              </div>
+            </div>
+          </section>
+
+          <section id="all-free" data-state="idea-intro">
+            <h1>All this for free!</h1>
+            <p class="large">with story points, vertical slices, and a regular two-week sprint.</p>
+            <p class="small">&hellip;and pay a zillion dollars for Jira.</p>
+
+            <aside class="notes">
+              Other tools may offer the same reports, and you can do all this
+              yourself on paper or a simple spreadsheet. The hard part is
+              maintaining an estimated backlog. But the payoff is huge.
+            </aside>
+          </section>
+        </section>
+
+        <!-- REFERENCES / WRAPUP-->
+        <section>
+          <section id="references">
+            <h1>I made References</h1>
+            <div class="columns dividers">
+              <div>
+                <a href="http://storypoints.info">
+                  <h3>StoryPoints.info<br /><em>Minisite</em></h3>
+                  <img src="gfx/storypointsinfo.png" alt="StoryPoints.info Screenshot">
+                </a>
+              </div>
+              <div>
+                <a href="https://www.tsmithcreative.com/blog/2017/what-are-story-points/">
+                  <h3>What are Story Points?<br /><em>Video</em></h3>
+                  <img src="gfx/whatarestorypoints.jpg" alt="What are Story Points? screenshot">
+                </a>
+              </div>
+              <div>
+                <a href="https://www.tsmithcreative.com/blog/2017/what-are-thin-vertical-slices/">
+                  <h3>What are Thin Vert Slices?<br /><em>Video</em></h3>
+                  <img src="gfx/whatareslices.jpg" alt="What are Thin Vertical Slices? screenshot">
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <section id="thank-you" data-state="blackmail">
+              <h1>Thank You</h1>
+              <h2>Slides and Resources on GitHub: <br/> <a href="http://tsmith512.github.io/estimate-with-points-and-slices">tsmith512.github.io/estimate-with-points-and-slices</a></h2>
+
+              <p>
+                  <strong>tsmith512</strong> on
+                  <a href="https://github.com/tsmith512">Github</a>,
+                  <a href="https://twitter.com/tsmith512">Twitter</a>,
+                  <br />
+                  <a href="https://linkedin.com/in/tsmith512">LinkedIn</a>,
+                  <a href="https://www.drupal.org/u/tsmith512">Drupal.org</a>,
+                  <a href="https://www.instagram.com/tsmith512/">Instagram</a>, and <br/>
+                  <strong>sometimes seen at <a href="http://www.fourkitchens.com">Four Kitchens</a>.</strong>
+              </p>
+
+              <p class="large">
+                <strong>DrupalCamp Colorado Attendees!</strong>
+                Mentored Code Sprints &mdash; Sunday, August 5th (tomorrow)
+                9am&ndash;1pm in the Music and Dance Studio, Room 120 of the King Center.
+              </p>
+            </section>
+          </section>
+
+        </section>
+			</div>
+		</div>
+
+		<script src="vendor/revealjs/lib/js/head.min.js"></script>
+		<script src="vendor/revealjs/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+        width: 1200,
+        height: 800,
+
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        keyboard: true,
+
+        menu: {
+          titleSelector: 'h1'
+        },
+
+				dependencies: [
+          { src: 'vendor/revealjs-menu/menu.js' },
+					{ src: 'vendor/revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); }},
+					{ src: 'vendor/revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); }},
+					{ src: 'vendor/revealjs/plugin/notes/notes.js', async: true },
+					{ src: 'vendor/revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "estimate-with-points-and-slices",
+  "version": "1.0.0",
+  "description": "Presentation by Taylor Smith on Estimating Iteratively with Story Points and Thin Vertical Slices",
+  "dependencies": {
+    "gulp-sass": "^4.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "author": "Taylor Smith",
+  "license": "CC-BY-SA-4.0"
+}

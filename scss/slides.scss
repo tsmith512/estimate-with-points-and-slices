@@ -1,0 +1,369 @@
+@import '../vendor/revealjs/css/theme/template/mixins.scss';
+@import '../vendor/revealjs/css/theme/template/settings.scss';
+
+$blue: #006DAF;
+$green: #238b47;
+$orange: #FF9900;
+$grey-lt: #E9E9E9;
+$grey-md: #BCBCBC;
+$grey-dk: #424242;
+$white: #F6F6F6;
+
+$red-dk: #990100;
+
+$whitney: 'Whitney SSm A', 'Whitney SSm B', Helvetica, Arial, sans-serif;
+$tungsten: 'Tungsten Narrow A', 'Tungsten Narrow B', sans-serif;
+$marker: 'Permanent Marker', $tungsten;
+
+// Base settings for all themes that can optionally be
+// overridden by the super-theme
+
+// Background of the presentation
+$backgroundColor: $grey-lt;
+
+// Primary/body text
+$mainFont: $whitney;
+$mainFontSize: 32px;
+$mainColor: $grey-dk;
+
+// Headings
+$headingMargin: 0 0 16px 0;
+$headingFont: $tungsten;
+$headingColor: $blue;
+$headingLineHeight: 0.9em;
+$headingLetterSpacing: 0.02em;
+$headingTextTransform: uppercase;
+$headingTextShadow: 1px 1px 0px rgba(255,255,255,0.75);
+$heading1TextShadow: 1px 1px 0px rgba(0,0,0,0.75);
+
+// Links and actions
+$linkColor: $blue;
+$linkColorHover: lighten( $linkColor, 20% );
+
+// Text selection
+$selectionBackgroundColor: $orange;
+$selectionColor: #fff;
+
+// Generates the presentation background, can be overridden
+// to return a background image or gradient
+@mixin bodyBackground() {
+  background: $backgroundColor;
+}
+
+@import '../vendor/revealjs/css/theme/template/theme.scss';
+
+body {
+  transition: background 0.1s ease;
+}
+
+.reveal {
+  h1 {
+    font-weight: 600;
+
+    a {
+      color: lighten($blue, 10%) !important;
+      &:hover { text-decoration: underline !important; }
+    }
+
+    del {
+      color: $grey-md;
+    }
+
+    em {
+      font-style: normal;
+      color: $red-dk;
+    }
+  }
+
+  h2 {
+    text-transform: none;
+    color: mix($grey-md, $grey-dk);
+
+    em {
+      font-style: normal;
+      color: $red-dk;
+    }
+  }
+
+  h3 {
+    text-transform: none;
+    color: mix($grey-md, $grey-dk);
+  }
+
+  // Parent theme provides to specific CSS to add this and I don't like it.
+  section img {
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  p {
+    margin: 1em 0;
+  }
+
+  p.large {
+    font-size: 36px;
+    font-weight: 700;
+  }
+
+  p.large, .columns.dividers {
+    border-bottom: 1px solid #bbb;
+    border-top: 1px solid #fff;
+    padding: 0.5em 0;
+    position: relative;
+
+    &:before, &:after {
+      position: absolute;
+      left: 0;
+      right: 0;
+      content: " ";
+      font-size: 0;
+    }
+    &:before {
+      top: -2px;
+      border-top: 1px solid #bbb;
+    }
+    &:after {
+      bottom: -2px;
+      border-bottom: 1px solid #fff;
+    }
+  }
+
+  hr {
+    border-top: 1px solid #bbb;
+    border-bottom: 1px solid #fff;
+    border-left: 0;
+    border-right: 0;
+  }
+  p.small {
+    border-style: dotted;
+    border-color: #bbb;
+    border-width: 1px 0;
+    padding: 1em 0;
+    font-size: 24px;
+    font-style: italic;
+  }
+
+  // If we have a small immediately after a large, don't double-border
+  p.large + p.small {
+    border: 0;
+    padding: 0;
+  }
+
+  .citation {
+    display: block;
+    margin-top: 0;
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  .marker {
+    font-family: $marker;
+  }
+
+  .error {
+    color: $red-dk;
+  }
+
+  dl, .whiteboard {
+    .error {
+      color: #FF3333;
+    }
+  }
+
+  .warning {
+    color: $orange;
+  }
+
+  .good {
+    color: $green;
+  }
+
+  dl, .whiteboard {
+    .good {
+      color: lighten($green, 5%);
+    }
+  }
+
+  .placeholder {
+    padding: 1em;
+    background: red;
+    color: white;
+  }
+
+  .whiteboard, dl {
+    margin: 0 auto;
+    background-color: $grey-dk;
+    color: $grey-lt;
+    border: {
+      top: 10px solid $grey-md;
+      bottom: 10px solid $grey-md;
+    }
+
+    text-align: center;
+
+    dt, dd, p {
+      margin: 1em;
+    }
+  }
+
+  .columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+
+    &.vcenter {
+      align-items: center;
+    }
+
+    > div {
+      margin: 0 1em;
+      flex: 1 1;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &.dividers {
+
+    }
+  }
+}
+
+// Special slides:
+.blackmail body {
+  background: {
+    image: url('../gfx/blackmail.jpg');
+    size: contain;
+    position: left center;
+    color: white;
+    repeat: no-repeat;
+  }
+
+  section.present {
+    right: 0;
+    text-align: right;
+
+    p.large {
+      margin-left: 35%;
+
+      strong {
+        color: lighten($red-dk, 10%);
+      }
+    }
+  }
+}
+
+.definition {
+  @extend %light-controls;
+  body {
+    background-color: $blue;
+  }
+
+  .reveal {
+    color: $grey-lt;
+
+    h1 {
+      color: $grey-lt;
+      font-weight: 300;
+      font-size: 1.5em;
+      text-shadow: none;
+
+      em {
+        color: lighten($blue, 30%);
+        text-shadow: 1px 1px 0 rgba(0,0,0,.5);
+      }
+    }
+
+    dt {
+      color: white;
+      font-family: $marker;
+      font-size: 3em;
+      margin: (1em/3) 0;
+    }
+
+    p.small {
+      border: 0;
+    }
+  }
+}
+
+.idea-intro {
+  @extend %light-controls;
+  body {
+    background-color: $green;
+  }
+
+  section.present {
+    color: $grey-lt;
+
+    h1 {
+      color: $grey-lt;
+    }
+
+    .columns.dividers, p.large {
+      border-bottom-color: darken($green, 5%);
+      border-top-color: lighten($green, 5%);
+
+      &:before {
+        border-top-color: darken($green, 5%);
+      }
+      &:after {
+        border-bottom-color: lighten($green, 5%);
+      }
+    }
+  }
+}
+
+.ojo {
+  @extend %light-controls;
+  body {
+    background-color: $red-dk;
+  }
+
+  section.present {
+    &, h1 {
+      color: $grey-lt;
+    }
+
+    .columns.dividers, p.large {
+      border-bottom-color: darken($red-dk, 5%);
+      border-top-color: lighten($red-dk, 5%);
+
+      &:before {
+        border-top-color: darken($red-dk, 5%);
+      }
+      &:after {
+        border-bottom-color: lighten($red-dk, 5%);
+      }
+    }
+  }
+}
+
+.blackout {
+  @extend %light-controls;
+  body {
+    background-color: black;
+  }
+}
+
+// Make the controls white on darker slides
+%light-controls {
+  .controls {
+    .controls-arrow:before, .controls-arrow:after {
+      background-color: $grey-lt !important;
+    }
+  }
+
+  .slide-menu-button a, .progress {
+    color: $grey-lt;
+  }
+}
