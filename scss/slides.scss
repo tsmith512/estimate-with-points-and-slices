@@ -239,11 +239,11 @@ body {
 }
 
 // Special slides:
-.blackmail body {
+.portrait body {
   background: {
-    image: url('../gfx/blackmail.jpg');
-    size: contain;
-    position: left center;
+    image: url('../gfx/portrait.jpg');
+    size: 30%;
+    position: left bottom;
     color: white;
     repeat: no-repeat;
   }
