@@ -13,7 +13,8 @@ $red-dk: #990100;
 
 $whitney: 'Whitney SSm A', 'Whitney SSm B', Helvetica, Arial, sans-serif;
 $tungsten: 'Tungsten Narrow A', 'Tungsten Narrow B', sans-serif;
-$marker: 'Permanent Marker', $tungsten;
+$marker-big:  "Inkwell Open A", "Inkwell Open B", serif;
+$marker-small:  "Inkwell Sans A", "Inkwell Sans B", serif;
 
 // Base settings for all themes that can optionally be
 // overridden by the super-theme
@@ -157,8 +158,14 @@ body {
     font-style: italic;
   }
 
-  .marker {
-    font-family: $marker;
+  .marker-big {
+    font-family: $marker-big;
+    font-weight: 700;
+  }
+
+  .marker-small {
+    font-family: $marker-small;
+    font-weight: 800;
   }
 
   .error {
@@ -285,7 +292,7 @@ body {
 
     dt {
       color: white;
-      font-family: $marker;
+      font-family: $marker-big;
       font-size: 3em;
       margin: (1em/3) 0;
     }
