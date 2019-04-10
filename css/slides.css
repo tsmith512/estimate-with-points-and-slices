@@ -334,8 +334,13 @@ body {
   font-size: 18px;
   font-style: italic; }
 
-.reveal .marker {
-  font-family: "Permanent Marker", "Tungsten Narrow A", "Tungsten Narrow B", sans-serif; }
+.reveal .marker-big {
+  font-family: "Inkwell Open A", "Inkwell Open B", serif;
+  font-weight: 700; }
+
+.reveal .marker-small {
+  font-family: "Inkwell Sans A", "Inkwell Sans B", serif;
+  font-weight: 800; }
 
 .reveal .error {
   color: #990100; }
@@ -384,19 +389,26 @@ body {
     .reveal .columns > div:last-child {
       margin-right: 0; }
 
-.blackmail body {
-  background-image: url("../gfx/blackmail.jpg");
-  background-size: contain;
-  background-position: left center;
+.portrait body {
+  background-image: url("../gfx/portrait.jpg");
+  background-size: 30%;
+  background-position: left bottom;
   background-color: white;
   background-repeat: no-repeat; }
-  .blackmail body section.present {
+  .portrait body section.present {
     right: 0;
     text-align: right; }
-    .blackmail body section.present p.large {
+    .portrait body section.present p.large {
       margin-left: 35%; }
-      .blackmail body section.present p.large strong {
+      .portrait body section.present p.large strong {
         color: #cc0100; }
+
+.dcna2019 body {
+  background-image: url("../gfx/dcna2019.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: white; }
 
 .definition body {
   background-color: #006DAF; }
@@ -413,9 +425,9 @@ body {
       text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5); }
   .definition .reveal dt {
     color: white;
-    font-family: "Permanent Marker", "Tungsten Narrow A", "Tungsten Narrow B", sans-serif;
+    font-family: "Inkwell Open A", "Inkwell Open B", serif;
     font-size: 3em;
-    margin: 0.33333em 0; }
+    margin: 0.33333em; }
   .definition .reveal p.small {
     border: 0; }
 
