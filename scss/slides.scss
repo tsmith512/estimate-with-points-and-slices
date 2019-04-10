@@ -269,6 +269,18 @@ body {
   }
 }
 
+.dcna2019 {
+  body {
+    background: {
+      image: url('../gfx/dcna2019.png');
+      size: contain;
+      position: center center;
+      repeat: no-repeat;
+      color: white;
+    }
+  }
+}
+
 .definition {
   @extend %light-controls;
   body {
