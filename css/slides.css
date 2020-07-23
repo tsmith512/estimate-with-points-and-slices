@@ -403,13 +403,6 @@ body {
       .portrait body section.present p.large strong {
         color: #cc0100; }
 
-.dcna2019 body {
-  background-image: url("../gfx/dcna2019.png");
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: white; }
-
 .definition body {
   background-color: #006DAF; }
 
@@ -430,6 +423,20 @@ body {
     margin: 0.33333em; }
   .definition .reveal p.small {
     border: 0; }
+
+.cooldown body {
+  background-color: #04353a; }
+
+.cooldown section.present, .cooldown section.present h1 {
+  color: #E9E9E9; }
+
+.cooldown section.present .columns.dividers, .cooldown section.present p.large {
+  border-bottom-color: #021f22;
+  border-top-color: #064b52; }
+  .cooldown section.present .columns.dividers:before, .cooldown section.present p.large:before {
+    border-top-color: #021f22; }
+  .cooldown section.present .columns.dividers:after, .cooldown section.present p.large:after {
+    border-bottom-color: #064b52; }
 
 .idea-intro body {
   background-color: #238b47; }
@@ -463,8 +470,8 @@ body {
 .blackout body {
   background-color: black; }
 
-.definition .controls .controls-arrow:before, .idea-intro .controls .controls-arrow:before, .ojo .controls .controls-arrow:before, .blackout .controls .controls-arrow:before, .definition .controls .controls-arrow:after, .idea-intro .controls .controls-arrow:after, .ojo .controls .controls-arrow:after, .blackout .controls .controls-arrow:after {
+.definition .controls .controls-arrow:before, .cooldown .controls .controls-arrow:before, .idea-intro .controls .controls-arrow:before, .ojo .controls .controls-arrow:before, .blackout .controls .controls-arrow:before, .definition .controls .controls-arrow:after, .cooldown .controls .controls-arrow:after, .idea-intro .controls .controls-arrow:after, .ojo .controls .controls-arrow:after, .blackout .controls .controls-arrow:after {
   background-color: #E9E9E9 !important; }
 
-.definition .slide-menu-button a, .idea-intro .slide-menu-button a, .ojo .slide-menu-button a, .blackout .slide-menu-button a, .definition .progress, .idea-intro .progress, .ojo .progress, .blackout .progress {
+.definition .slide-menu-button a, .cooldown .slide-menu-button a, .idea-intro .slide-menu-button a, .ojo .slide-menu-button a, .blackout .slide-menu-button a, .definition .progress, .cooldown .progress, .idea-intro .progress, .ojo .progress, .blackout .progress {
   color: #E9E9E9; }
