@@ -269,18 +269,6 @@ body {
   }
 }
 
-.dcna2019 {
-  body {
-    background: {
-      image: url('../gfx/dcna2019.png');
-      size: contain;
-      position: center center;
-      repeat: no-repeat;
-      color: white;
-    }
-  }
-}
-
 .definition {
   @extend %light-controls;
   body {
@@ -311,6 +299,31 @@ body {
 
     p.small {
       border: 0;
+    }
+  }
+}
+
+.cooldown {
+  @extend %light-controls;
+  body {
+    background-color: #04353a;
+  }
+
+  section.present {
+    &, h1 {
+      color: $grey-lt;
+    }
+
+    .columns.dividers, p.large {
+      border-bottom-color: darken(#04353a, 5%);
+      border-top-color: lighten(#04353a, 5%);
+
+      &:before {
+        border-top-color: darken(#04353a, 5%);
+      }
+      &:after {
+        border-bottom-color: lighten(#04353a, 5%);
+      }
     }
   }
 }
