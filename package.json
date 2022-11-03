@@ -6,7 +6,7 @@
     "gulp-sass": "^4.0.1"
   },
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^4.0.2"
   },
   "author": "Taylor Smith",
   "license": "CC-BY-SA-4.0"
